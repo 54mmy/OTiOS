@@ -1,0 +1,62 @@
+<Alloy>
+
+	<Collection src="contacts"/>
+
+		<Window role="leftWindow" id="leftd">
+			<TableView separatorColor="#A2A3BB">
+				<TableViewRow height="200">
+					<ImageView id="circularView" image="/prof.png"></ImageView>
+					<Label color="#000807" top="160">Swapnil Singh</Label>
+				</TableViewRow>
+				<TableViewRow height="40" backgroundColor="#4285f4">
+					<Label color="white">List</Label>
+				</TableViewRow>
+				<TableViewRow height="40" backgroundColor="#4285f4">
+					<Label color="white">Add</Label>
+				</TableViewRow>
+				
+				<FooterView>
+					<View height="1"></View>
+				</FooterView>
+			</TableView>
+		</Window>
+		
+		<NavigationWindow platform="ios" role="centerWindow" id="main">
+			<Window>
+				<LeftNavButton>
+					<Button onClick="toggle">Menu</Button>
+				</LeftNavButton>
+				<RightNavButton>
+					<Button onClick="addForm">Add</Button>
+				</RightNavButton>
+				<ListView platform="ios" id="listView" defaultItemTemplate="template" separatorColor="#A2A3BB" separatorHeight="1dp">
+
+					<!-- The Templates tag sets the ListView's templates property -->
+
+					<Templates>
+
+						<!-- Define your item templates within the Templates tags or use the
+						Require tag to include a view that only contains an ItemTemplate -->
+
+						<ItemTemplate name="template">
+							<Label bindId="fname" id="fname" color="#000807"/>
+							<Label bindId="lname" id="lname" color="#000807"/>
+							<Label bindId="mobile" id="mobile" color="#000807"/>
+						</ItemTemplate>
+
+					</Templates>
+					<ListSection dataCollection="contacts">
+
+						<!-- You can specify any ListItem or ListDataItem properties in ListItem -->
+
+						<!-- Specify data to bind to the item template with inline attributes
+						defined as <bindId>:<Ti.UI.Component.property> -->
+
+						<ListItem height="80" fname:text="{firstname}" lname:text="{lastname}" mobile:text="{contact}" />
+					</ListSection>
+
+				</ListView>
+
+			</Window>
+		</NavigationWindow>
+</Alloy>

@@ -1,0 +1,22 @@
+
+"#fname":{
+	left: '60dp', top: 0
+}
+
+"#lname":{
+	left: '60dp', top: '25dp'
+}
+
+"#mobile":{
+	left: '60dp', top: '50dp'
+}
+
+"#circularView":{
+	width: 100,
+    height: 100,
+    left: 50,
+    backgroundColor: '#fff',
+    borderColor: '#000',
+    borderRadius: 52,
+    borderWidth: 2
+}
